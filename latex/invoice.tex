@@ -1,0 +1,104 @@
+\documentclass[a4paper, 10pt]{article}
+% \usepackage{geometry}
+% \geometry{
+%   showframe,
+% }
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{tabularx}
+\setlength{\parindent}{0pt}
+
+% \newcolumntype{b}{>{\hsize=2.3\hsize}X}
+% \newcolumntype{s}{>{\hsize=.45\hsize}X}
+% \newcolumntype{m}{>{\hsize=.9\hsize}X}
+
+
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+
+\begin{document}
+
+\begin{center}
+  \textbf{TAX INVOICE}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c}
+  Linga Bhairavi Plastics (LBP) Pvt. Ld.
+  \\
+  3/117, BDO Office Road, Padappai
+  Kancheepuram
+  Tamil Nadu - 601301
+  \\
+  lingabhairaviplastics@gmail.com
+\end{tabular}
+\end{center}
+
+\begin{tabularx}{\textwidth}{|X|X|X|}
+  \hline
+  GSTIN: 33AAFFL9060L1Z2 & State Name: Tamil Nadu & State code: 33 PAN: AADC123456\\
+  \hline
+  \textbf{Details of Receiver (Billed to party)} & \textbf{Details of Receiver (Ship to party)} & Invoice No: \\
+  Name: & Name: & Invoice Date: \\
+  Address: & Address: & Vendor code: \\
+  Place of supply: & Place of supply: & Whether invoice charge on reverse charge basis: \\
+  State code: & State code: & LR No: \\
+  GSTIN No: & GSTIN No: & Purchase order No:\\
+  && Terms of Payment:\\
+  && Invoice currency:\\
+  && No of Pkgs:\\
+  \hline
+\end{tabularx}
+
+% \begin{tabularx}{\textwidth}{l|l|l|l|l|l|l|l|l|l}
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|}
+  \textbf{S. No.}&\textbf{Description}&\textbf{HSN}&\textbf{Qty}&\textbf{UOM}&\textbf{Rate}&\textbf{Full tax rate}&\textbf{Total amount Rs.}\\
+  \hline
+\end{tabularx}
+
+\vfill
+\rule{\textwidth}{0.4pt}
+\begin{tabularx}{\textwidth}{|>{\hsize=1.5\hsize}X|>{\hsize=0.5\hsize}X|}
+  {
+    \begin{tabularx}{\textwidth}{X|X}
+      Total&def\\
+    \end{tabularx}
+    \newline
+      \hrule
+    GST in words: \newline
+    Invoice amount in words (INR): 
+  }&
+  {
+  \begin{tabular}{l|l}
+    Taxable Amount Rs.&amount\\
+    CGST&cgst\\
+    SGST&sgst\\
+    IGST&igst\\
+    Total GST&total\\
+    Grand Total&gtotal\\
+  \end{tabular}
+  }\\
+\hline
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{|>{\hsize=1.5\hsize}X|>{\hsize=0.5\hsize}X|}
+  {
+    I/we certify that the particulars given above are true and correct and the amount specified represents
+    the prices actually charged and that there is no flow of additional consideration directly or indirectly from the buyer
+    \newline
+  }&
+  {
+    \textbf{For Linga Bhairavi Plastics}
+  }
+\end{tabularx}
+\hrule
+
+\end{document}
+
+  % \textbf{Invoice amount words(INR):}&  &SGST&sgst amount\\
+  % &  &Total GST Rs.&totalgst\\
