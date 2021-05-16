@@ -16,15 +16,15 @@ place_of_supply varchar(50) not null,
 state_code char(2) not null,
 contact_no char(10) not null,
 contact_email varchar(50) not null   
-)
+);
 
 create table material_master(
 hsncode char(15) primary key,
 material_detail varchar(50) not null,
 uom varchar(10) not null,
 rate integer not null,
-tax_detail decimal(3,2) not null
-)
+tax_detail decimal(4,2) not null
+);
 
 create table stock_register(
 dc_no varchar(20) primary key,
@@ -34,3 +34,4 @@ process char(3) not null,
 qty int not null,
 foreign key (hsncode) references material_master(hsncode)
 );
+
