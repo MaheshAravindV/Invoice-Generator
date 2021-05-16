@@ -47,4 +47,23 @@ def add_material():
         return res
 
 
-
+@app.route('/add-stock', methods=['GET','POST'])
+def add_stock():
+    try:
+        if request.method == 'POST':
+            form =  request.form
+            print(form)
+            query  =f"INSERT INTO stock_register VALUES ('"+form['dc_no']+"','"+form['hsncode']+"', '"+form['date_of_process']+"', '"+form['process']+"',"+form['qty']+")"
+            print(query)
+            cur.execute(query)
+            con.commit()
+            res = jsonify(success=True)
+            return res
+        else:
+            return render_template('add-stock.html')
+    except Exception as e:
+        if(str(e)[1:5] == '1452'):
+            return "Product for given HSN code doesn't exist"
+        print("Oooh!")
+        res = jsonify(success=False)
+        return res
