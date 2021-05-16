@@ -67,3 +67,24 @@ def add_stock():
         print("Oooh!")
         res = jsonify(success=False)
         return res
+
+@app.route('/invoice-generator',methods=['GET','POST'])
+def invoice():
+    try:
+        if request.method == 'POST':
+            form =  request.form
+            print(form)
+            query  =f"INSERT INTO stock_register VALUES ('"+form['dc_no']+"','"+form['hsncode']+"', '"+form['date_of_process']+"', '"+form['process']+"',"+form['qty']+")"
+            print(query)
+            cur.execute(query)
+            con.commit()
+            res = jsonify(success=True)
+            return res
+        else:
+            cur.execute('select gstin_no,name from customer_master;')
+            rows = list(cur.fetchall())
+            return "blah"
+    except Exception as e:
+        print(e)
+        res = jsonify(success=False)
+        return res
